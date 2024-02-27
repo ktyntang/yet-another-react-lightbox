@@ -51,7 +51,7 @@ export function round(value: number, decimals = 0) {
   return Math.round((value + Number.EPSILON) * factor) / factor;
 }
 
-export const isImageSlide = (slide: Slide): slide is SlideImage => slide.type === undefined || slide.type === "image";
+export const isImageSlide = (slide: Slide): slide is SlideImage => slide?.type === undefined || slide?.type === "image";
 
 export const isImageFitCover = (image: SlideImage, imageFit?: LightboxProps["carousel"]["imageFit"]) =>
   image.imageFit === IMAGE_FIT_COVER || (image.imageFit !== IMAGE_FIT_CONTAIN && imageFit === IMAGE_FIT_COVER);
